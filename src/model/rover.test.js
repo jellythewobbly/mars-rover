@@ -59,4 +59,58 @@ describe("Test cases for Rover model", () => {
       expect(rover.direction).toEqual(Direction.EAST);
     });
   });
+
+  describe("Rover can move forward", () => {
+    test("move forward when rover is facing north", () => {
+      let x = 0;
+      let y = 0;
+      let direction = Direction.NORTH;
+      let rover = new Rover(x, y, direction);
+
+      rover.moveForward();
+
+      expect(rover.direction).toEqual(Direction.NORTH);
+      expect(rover.x).toEqual(x);
+      expect(rover.y).toEqual(y + 1);
+    });
+
+    test("move forward when rover is facing east", () => {
+      let x = 0;
+      let y = 0;
+      let direction = Direction.EAST;
+      let rover = new Rover(x, y, direction);
+
+      rover.moveForward();
+
+      expect(rover.direction).toEqual(Direction.EAST);
+      expect(rover.x).toEqual(x + 1);
+      expect(rover.y).toEqual(y);
+    });
+
+    test("move forward when rover is facing south", () => {
+      let x = 0;
+      let y = 0;
+      let direction = Direction.SOUTH;
+      let rover = new Rover(x, y, direction);
+
+      rover.moveForward();
+
+      expect(rover.direction).toEqual(Direction.SOUTH);
+      expect(rover.x).toEqual(x);
+      expect(rover.y).toEqual(y - 1);
+    });
+
+    test("move forward when rover is facing west", () => {
+      let x = 0;
+      let y = 0;
+      let direction = Direction.WEST;
+      let rover = new Rover(x, y, direction);
+
+      rover.moveForward();
+
+      expect(rover.direction).toEqual(Direction.WEST);
+      expect(rover.x).toEqual(x - 1);
+      expect(rover.y).toEqual(y);
+    });
+  });
 });

@@ -10,4 +10,8 @@ module.exports = class Rover {
   turnLeft() {
     this.direction = Direction.turnLeft(this.direction);
   }
+
+  turnRight() {
+    this.direction = Direction.turnRight(this.direction);
+  }
 };

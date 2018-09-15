@@ -1,5 +1,5 @@
 const Rover = require("./rover");
-const Direction = require("./direction")
+const Direction = require("./direction");
 
 describe("Test cases for Rover model", () => {
   test("test we can create instance of Rover model", () => {
@@ -10,6 +10,30 @@ describe("Test cases for Rover model", () => {
     expect(rover.x).toEqual(x);
     expect(rover.y).toEqual(y);
     expect(rover.direction).toEqual(direction);
+  });
+
+  describe("Rover can turn right", () => {
+    test("turn right when rover is facing east", () => {
+      let x = 0;
+      let y = 0;
+      let direction = Direction.EAST;
+      let rover = new Rover(x, y, direction);
+
+      rover.turnRight();
+
+      expect(rover.direction).toEqual(Direction.SOUTH);
+    });
+
+    test("turn right when rover is facing west", () => {
+      let x = 0;
+      let y = 0;
+      let direction = Direction.WEST;
+      let rover = new Rover(x, y, direction);
+
+      rover.turnRight();
+
+      expect(rover.direction).toEqual(Direction.NORTH);
+    });
   });
 
   describe("Rover can turn left", () => {

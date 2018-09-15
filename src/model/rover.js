@@ -26,4 +26,15 @@ module.exports = class Rover {
       this.x -= 1;
     }
   }
+
+  turnOppositeDirection() {
+    this.turnLeft();
+    this.turnLeft();
+  }
+
+  moveBackward() {
+    this.turnOppositeDirection();
+    this.moveForward();
+    this.turnOppositeDirection();
+  }
 };

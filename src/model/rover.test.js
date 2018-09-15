@@ -113,4 +113,19 @@ describe("Test cases for Rover model", () => {
       expect(rover.y).toEqual(y);
     });
   });
+
+  describe("Rover can move backward", () => {
+    test("move backward when rover is facing north", () => {
+      let x = 0;
+      let y = 0;
+      let direction = Direction.NORTH;
+      let rover = new Rover(x, y, direction);
+
+      rover.moveBackward();
+
+      expect(rover.direction).toEqual(Direction.NORTH);
+      expect(rover.x).toEqual(x);
+      expect(rover.y).toEqual(y - 1);
+    });
+  });
 });

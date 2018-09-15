@@ -44,3 +44,15 @@ test('rover command FFRFL facing East', () => {
 	rover.move('RFF');
 	expect(rover.location).toEqual([4, 2]);
 });
+
+test('Google Code movement test 1', () => {
+	let rover = new Rover('1 2', 'N');
+	rover.move('LFLFLFLFF');
+	expect(rover.location).toEqual([1, 3]);
+});
+
+test('Google Code movement test 2', () => {
+	let rover = new Rover('3 3', 'E');
+	rover.move('FFRFFRFRRF');
+	expect(rover.location).toEqual([5, 1]);
+});
